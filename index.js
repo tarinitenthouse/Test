@@ -72,7 +72,7 @@ app.get('/', (req, res) => {
         <form action="/play-audio" method="get">
           <label for="url">Enter YouTube URL:</label>
           <input type="text" id="url" name="url" required />
-          <button type="submit">Stream Audio</button>
+          <button type="submit">Listen Audio</button>
         </form>
       </body>
     </html>
