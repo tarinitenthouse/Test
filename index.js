@@ -43,13 +43,15 @@ app.get('/play-audio', async (req, res) => {
     const title = info.videoDetails.title;
 
     // Stream the audio only (highest quality audio stream)
-    const audioStream = ytdl(videoUrl, {
-      filter: 'audioonly',
-      quality: 'highestaudio',
-      headers: {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36'
-      }
-    });
+   const audioStream = ytdl(videoUrl, {
+  filter: 'audioonly',
+  quality: 'highestaudio',
+  headers: {
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36',
+    'Cookie': 'iSt7adM2coM'  // Add your YouTube cookies here
+  }
+});
+
 
     // Set the correct MIME type for audio
     res.header('Content-Type', 'audio/mp3');
